@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "AuthenticationGrpc";
+
+
+service Signup{
+	rpc signupUser (SignupRequest) returns (SignupReply);
+}
+
+
+message SignupRequest{
+  string username = 1;
+  string password = 2;
+}
+
+
+message SignupReply {
+  string message = 1;
+}
