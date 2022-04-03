@@ -19,7 +19,7 @@ namespace AuthenticationGrpc.Services
                 });
             }
 
-            if (_authHandler.verifyUser(request.Username, request.Password))
+            if (!_authHandler.verifyUser(request.Username, request.Password))
             {
                 return Task.FromResult(new LoginReply
                 {

@@ -13,7 +13,7 @@ namespace AuthenticationGrpc.Services
 
         public override Task<SignupReply> signupUser(SignupRequest request, ServerCallContext context)
         {
-            if (_authHandler.findUser(request.Username) == null)
+            if (_authHandler.findUser(request.Username) != null)
             {
                 return Task.FromResult(new SignupReply
                 {
