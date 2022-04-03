@@ -9,6 +9,7 @@ namespace AuthenticationGrpc.Services
         {
             _authHandler = new AuthHandler();
         }
+
         public override Task<LoginReply> loginUser(LoginRequest request, ServerCallContext context)
         {
             if (_authHandler.findUser(request.Username) == null)
